@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Haworth Men's Shed</title>
+    <style>
+        /* Reusing the same CSS from your main page to keep the look consistent */
+        :root { --shed-orange: #f39c12; --shed-dark: #2c2c2c; --bg-gray: #e0e0e0; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; background-color: var(--bg-gray); color: #333; line-height: 1.6; }
+        .page-wrapper { max-width: 1100px; margin: 40px auto; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; }
+        header { background: var(--shed-dark); color: white; display: flex; align-items: center; padding: 15px 40px; justify-content: space-between; }
+        .logo-box img { height: 70px; }
+        nav ul { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; }
+        nav ul li a { color: white; text-decoration: none; padding: 10px 15px; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; }
+        .btn-orange { background: var(--shed-orange); color: white !important; border-radius: 4px; padding: 10px 20px; text-decoration: none; }
+        .content-body { padding: 60px 80px; }
+        h1 { color: var(--shed-dark); border-bottom: 3px solid var(--shed-orange); display: inline-block; margin-bottom: 30px; }
+        .flex-row { display: flex; gap: 40px; align-items: center; margin-bottom: 40px; }
+        footer { background: #fff; padding: 25px 40px; border-top: 1px solid #eee; text-align: center; font-size: 0.85rem; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <header>
+            <div class="logo-box"><img src="logo.jpg" alt="Logo"></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="donate.html" class="btn-orange">Donate</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content-body">
+            <h1>Our Story</h1>
+            <div class="flex-row">
+                <div>
+                    <p>Haworth Men's Shed was established to provide a friendly, inclusive environment for men to come together. We recognize that men often find it easier to talk when they are working "shoulder to shoulder" on a project.</p>
+                    <p>Whether you are a master craftsman or have never held a hammer in your life, there is a place for you here. We focus on mental health, community service, and preserving traditional skills.</p>
+                </div>
+            </div>
+            <h3>Our Values</h3>
+            <ul>
+                <li><strong>Inclusivity:</strong> Everyone is welcome, regardless of skill level.</li>
+                <li><strong>Well-being:</strong> Fighting isolation through friendship.</li>
+                <li><strong>Sustainability:</strong> Repairing and upcycling items for the community.</li>
+            </ul>
+        </div>
+
+        <footer>&copy; 2024 Haworth Men's Shed</footer>
+    </div>
+</body>
+</html>
