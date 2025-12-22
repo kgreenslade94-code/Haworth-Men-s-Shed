@@ -4,269 +4,386 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haworth Men's Shed</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --shed-orange: #f39c12;
-            --shed-dark: #2c2c2c;
-            --bg-gray: #e0e0e0;
+            /* Palette Update: Slightly richer orange and softer darks */
+            --primary: #f59e0b; /* Warmer Orange */
+            --primary-hover: #d97706;
+            --dark: #1f2937;    /* Soft Black/Slate */
+            --light: #f3f4f6;   /* Very light grey background */
             --white: #ffffff;
+            --text-main: #374151;
+            --text-light: #6b7280;
+            --radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
         * { box-sizing: border-box; }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-gray);
-            color: #333;
-            line-height: 1.6;
+            background-color: var(--light);
+            color: var(--text-main);
+            line-height: 1.7;
         }
 
-        /* Main Wrapper */
-        .page-wrapper {
-            max-width: 1100px;
-            margin: 40px auto;
-            background: var(--white);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        /* Header & Nav */
+        /* --- Header --- */
         header {
-            background: var(--shed-dark);
-            color: white;
+            background: var(--white);
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
             display: flex;
             align-items: center;
-            padding: 15px 40px;
             justify-content: space-between;
         }
 
-        .logo-box img {
-            height: 70px;
-            display: block;
+        .logo-box {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Placeholder for logo styling */
+        .logo-circle {
+            width: 40px; 
+            height: 40px; 
+            background: var(--primary); 
+            border-radius: 50%;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             align-items: center;
+            gap: 25px;
             margin: 0;
             padding: 0;
         }
 
         nav ul li a {
-            color: white;
+            color: var(--text-main);
             text-decoration: none;
-            padding: 10px 15px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            transition: color 0.3s;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
 
         nav ul li a:hover {
-            color: var(--shed-orange);
+            color: var(--primary);
         }
 
-        /* Button Styling */
+        /* --- Buttons --- */
         .btn {
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: opacity 0.3s, transform 0.2s;
             display: inline-block;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: var(--radius);
+            transition: all 0.2s ease;
             text-align: center;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
+            cursor: pointer;
+            border: none;
         }
 
         .btn-orange {
-            background: var(--shed-orange);
+            background: var(--primary);
             color: white !important;
+            padding: 10px 24px;
+            box-shadow: 0 2px 5px rgba(245, 158, 11, 0.3);
         }
 
-        .btn-nav {
-            padding: 10px 20px;
-            margin-left: 10px;
+        .btn-orange:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(245, 158, 11, 0.4);
         }
 
-        /* Hero Section */
+        .btn-text {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .btn-text:hover { text-decoration: underline; }
+
+        /* --- Hero Section --- */
         .hero {
-            padding: 60px 40px;
-            border-bottom: 1px solid #eee;
-            text-align: left;
+            background-color: var(--dark);
+            /* Optional: Add a subtle background image here with an overlay */
+            background-image: linear-gradient(rgba(31, 41, 55, 0.9), rgba(31, 41, 55, 0.8)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin: 0 0 10px 0;
-            color: var(--shed-dark);
+            font-size: 3rem;
+            margin: 0 0 15px 0;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
         .hero p {
-            color: #666;
-            font-size: 1.2rem;
-            margin-bottom: 25px;
+            font-size: 1.25rem;
+            color: #d1d5db; /* Light gray text */
+            max-width: 600px;
+            margin: 0 auto 30px auto;
         }
 
-        .btn-large {
-            padding: 15px 30px;
-            font-size: 1rem;
-        }
-
-        /* Content Grid */
-        .content-grid {
+        /* --- Main Layout Grid --- */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
             display: grid;
-            grid-template-columns: 1fr 1fr 300px;
+            grid-template-columns: 2fr 1fr; /* Main Content | Sidebar */
             gap: 40px;
-            padding: 40px;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* --- Cards (Clean White Boxes) --- */
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid #e5e7eb;
         }
 
         h3 {
-            border-bottom: 2px solid var(--shed-orange);
-            padding-bottom: 8px;
+            margin-top: 0;
+            color: var(--dark);
+            font-size: 1.5rem;
             margin-bottom: 20px;
-            color: var(--shed-dark);
-            text-transform: uppercase;
-            font-size: 1.1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Small orange underline accent */
+        h3::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+            margin-top: 8px;
+            border-radius: 2px;
         }
 
-        .section-box ul {
-            padding-left: 20px;
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
         }
 
-        .section-box li {
-            margin-bottom: 10px;
-        }
-
-        /* Sidebar & Forms */
-        .sidebar-item {
-            margin-bottom: 35px;
-            background: #fcfcfc;
+        .feature-item {
+            background: var(--light);
             padding: 15px;
-            border: 1px solid #eee;
-            border-radius: 4px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-item::before {
+            content: '✓'; /* Simple checkmark icon */
+            color: var(--primary);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* --- Sidebar & Forms --- */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid #e5e7eb;
         }
 
         .map-placeholder {
-            background: #eee;
-            height: 150px;
+            background: #e5e7eb;
+            height: 180px;
             width: 100%;
+            border-radius: var(--radius);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #999;
-            margin: 15px 0;
-            border-radius: 4px;
+            color: var(--text-light);
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Form Styling */
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark);
         }
 
         input, textarea {
             width: 100%;
-            padding: 10px;
-            margin: 5px 0 15px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
             font-family: inherit;
+            transition: border-color 0.2s;
+            background: #f9fafb;
         }
 
-        /* Footer */
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+        }
+
+        /* --- Footer --- */
         footer {
-            background: #fff;
-            padding: 25px 40px;
-            border-top: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            color: #888;
+            background: var(--dark);
+            color: #9ca3af;
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.9rem;
         }
 
-        @media (max-width: 900px) {
-            .content-grid { grid-template-columns: 1fr; }
-            header { flex-direction: column; gap: 15px; }
+        footer a { color: white; text-decoration: none; margin: 0 5px; }
+        footer a:hover { text-decoration: underline; }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 15px; }
+            .container { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-    <div class="page-wrapper">
-        <header>
+    <header>
+        <div class="nav-container">
             <div class="logo-box">
-                <img src="logo.jpg" alt="Haworth Men's Shed">
+                <div class="logo-circle"></div>
+                Haworth Men's Shed
             </div>
             <nav>
                 <ul>
                     <li><a href="about.html">About</a></li>
                     <li><a href="activities.html">Activities</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="donate.html" class="btn btn-orange btn-nav">Donate</a></li>
+                    <li><a href="donate.html" class="btn btn-orange">Donate</a></li>
                 </ul>
             </nav>
-        </header>
-
-        <section class="hero">
-            <h1>Welcome to Haworth Men's Shed</h1>
-            <p>A place to create, build, connect, and belong.</p>
-            <a href="join.html" class="btn btn-orange btn-large">Join Us Today</a>
-        </section>
-
-        <div class="content-grid">
-            <div class="section-box">
-                <h3>About Us</h3>
-                <p>Haworth Men's Shed is a place where men can meet to share skills, work on projects, or simply have a cup of tea and a chat.</p>
-                
-                <h3>Support Us</h3>
-                <p>We are a registered charity and rely on your kind donations to keep our doors open.</p>
-                <a href="donate.html" class="btn btn-orange" style="padding: 10px 20px;">Donate Now</a>
-            </div>
-
-            <div class="section-box">
-                <h3>Activities</h3>
-                <ul>
-                    <li>Woodworking & Furniture Repair</li>
-                    <li>Community Gardening & Allotment</li>
-                    <li>Metalwork & Electronics</li>
-                    <li>Skill-sharing Workshops</li>
-                    <li>Social Trips & Talks</li>
-                </ul>
-                <p><a href="activities.html" style="color: var(--shed-orange);">View all activities &rarr;</a></p>
-            </div>
-
-            <aside>
-                <div class="sidebar-item">
-                    <h3>Location & Hours</h3>
-                    <p>Find us at: [Your Address Here]</p>
-                    <div class="map-placeholder">Map View</div>
-                    <p><strong>Tue & Thu:</strong> 10am - 4pm</p>
-                </div>
-
-                <div class="sidebar-item">
-                    <h3>Message Us</h3>
-                    <form action="send_contact.php" method="POST">
-                        <label>Name</label>
-                        <input type="text" name="name" required>
-                        <label>Email</label>
-                        <input type="email" name="email" required>
-                        <label>Message</label>
-                        <textarea name="message" rows="3" required></textarea>
-                        <button type="submit" class="btn btn-orange" style="width: 100%; border: none; cursor: pointer; padding: 12px;">Send Message</button>
-                    </form>
-                </div>
-            </aside>
         </div>
+    </header>
 
-        <footer>
-            <div>&copy; 2024 Haworth Men's Shed. Registered Charity No. [Number]</div>
-            <div>
-                Follow us: <a href="https://facebook.com" style="color:#888">Facebook</a> | <a href="https://twitter.com" style="color:#888">Twitter</a>
+    <section class="hero">
+        <h1>Build. Connect. Belong.</h1>
+        <p>A community space for men to share skills, work on projects, or simply have a cup of tea and a chat.</p>
+        <a href="join.html" class="btn btn-orange" style="font-size: 1.1rem; padding: 12px 30px;">Join Us Today</a>
+    </section>
+
+    <div class="container">
+        <main class="main-content">
+            
+            <div class="card">
+                <h3>About Us</h3>
+                <p>Haworth Men's Shed is a place where men can meet to share skills, work on projects, or simply have a cup of tea and a chat. We provide the tools and the space; you provide the creativity.</p>
+                <br>
+                <h3>Support Our Mission</h3>
+                <p>We are a registered charity and rely on your kind donations to keep our doors open and our tools sharp.</p>
+                <a href="donate.html" class="btn btn-orange">Make a Donation</a>
             </div>
-        </footer>
+
+            <div class="card">
+                <h3>What We Do</h3>
+                <p>Whether you are an expert or a beginner, there is something for everyone.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">Woodworking</div>
+                    <div class="feature-item">Furniture Repair</div>
+                    <div class="feature-item">Metalwork</div>
+                    <div class="feature-item">Electronics</div>
+                    <div class="feature-item">Gardening</div>
+                    <div class="feature-item">Social Trips</div>
+                </div>
+
+                <a href="activities.html" class="btn-text">View full activity schedule &rarr;</a>
+            </div>
+
+        </main>
+
+        <aside>
+            <div class="sidebar-card">
+                <h3>Visit Us</h3>
+                <p><strong>Opening Hours:</strong><br>Tue & Thu: 10am - 4pm</p>
+                <div class="map-placeholder">
+                    Google Map View
+                </div>
+                <p style="font-size: 0.9rem; color: #666;">123 Community Lane, Haworth, UK</p>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>Get in Touch</h3>
+                <form action="send_contact.php" method="POST">
+                    <label>Name</label>
+                    <input type="text" name="name" required placeholder="John Smith">
+                    
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder="john@example.com">
+                    
+                    <label>Message</label>
+                    <textarea name="message" rows="4" required placeholder="How can we help?"></textarea>
+                    
+                    <button type="submit" class="btn btn-orange" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </aside>
     </div>
+
+    <footer>
+        <div style="margin-bottom: 10px;">
+            &copy; 2024 Haworth Men's Shed. Registered Charity No. 123456
+        </div>
+        <div>
+            Follow us: <a href="#">Facebook</a> • <a href="#">Twitter</a> • <a href="#">Instagram</a>
+        </div>
+    </footer>
 
 </body>
 </html>
