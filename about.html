@@ -3,54 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Haworth Men's Shed</title>
+    <title>About Us - Haworth Men's Shed</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Reusing the same CSS from your main page to keep the look consistent */
-        :root { --shed-orange: #f39c12; --shed-dark: #2c2c2c; --bg-gray: #e0e0e0; }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; background-color: var(--bg-gray); color: #333; line-height: 1.6; }
-        .page-wrapper { max-width: 1100px; margin: 40px auto; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; }
-        header { background: var(--shed-dark); color: white; display: flex; align-items: center; padding: 15px 40px; justify-content: space-between; }
-        .logo-box img { height: 70px; }
-        nav ul { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; }
-        nav ul li a { color: white; text-decoration: none; padding: 10px 15px; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; }
-        .btn-orange { background: var(--shed-orange); color: white !important; border-radius: 4px; padding: 10px 20px; text-decoration: none; }
-        .content-body { padding: 60px 80px; }
-        h1 { color: var(--shed-dark); border-bottom: 3px solid var(--shed-orange); display: inline-block; margin-bottom: 30px; }
-        .flex-row { display: flex; gap: 40px; align-items: center; margin-bottom: 40px; }
-        footer { background: #fff; padding: 25px 40px; border-top: 1px solid #eee; text-align: center; font-size: 0.85rem; color: #888; }
+        :root {
+            --primary: #f59e0b; 
+            --primary-hover: #d97706;
+            --dark: #1f2937;    
+            --light: #f3f4f6;   
+            --white: #ffffff;
+            --text-main: #374151;
+            --text-light: #6b7280;
+            --radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--light); color: var(--text-main); line-height: 1.7; }
+
+        header { background: var(--white); border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; }
+        
+        .logo-box { font-weight: 700; font-size: 1.4rem; color: var(--dark); text-transform: uppercase; display: flex; align-items: center; gap: 15px; }
+        .logo-box img { height: 50px; width: auto; display: block; }
+
+        nav ul { list-style: none; display: flex; align-items: center; gap: 25px; margin: 0; padding: 0; }
+        nav ul li a { color: var(--text-main); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+        nav ul li a:hover { color: var(--primary); }
+
+        .page-title { background: var(--dark); color: white; padding: 60px 20px; text-align: center; }
+        .page-title h1 { margin: 0; font-size: 2.5rem; }
+
+        .container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+        .about-card { background: var(--white); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); }
+
+        h2 { color: var(--dark); margin-top: 0; }
+        h2::after { content: ''; display: block; width: 40px; height: 3px; background: var(--primary); margin-top: 10px; }
+
+        .vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
+        .vision-item { background: var(--light); padding: 20px; border-radius: var(--radius); }
+        .vision-item h4 { margin: 0 0 10px 0; color: var(--primary); }
+
+        footer { background: var(--dark); color: #9ca3af; padding: 40px 20px; text-align: center; margin-top: 60px; }
+
+        @media (max-width: 600px) { .vision-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <div class="page-wrapper">
-        <header>
-            <div class="logo-box"><img src="logo.jpg" alt="Logo"></div>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-box">
+                <img src="logo.jpg" alt="Logo">
+                Haworth Men's Shed
+            </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="activities.html">Activities</a></li>
-                    <li><a href="donate.html" class="btn-orange">Donate</a></li>
+                    <li><a href="future.html">Future</a></li>
+                    <li><a href="organisers.html">Organisers</a></li>
                 </ul>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <div class="content-body">
-            <h1>Our Story</h1>
-            <div class="flex-row">
-                <div>
-                    <p>Haworth Men's Shed was established to provide a friendly, inclusive environment for men to come together. We recognize that men often find it easier to talk when they are working "shoulder to shoulder" on a project.</p>
-                    <p>Whether you are a master craftsman or have never held a hammer in your life, there is a place for you here. We focus on mental health, community service, and preserving traditional skills.</p>
+    <section class="page-title">
+        <h1>About the Shed</h1>
+    </section>
+
+    <div class="container">
+        <div class="about-card">
+            <h2>Our Purpose</h2>
+            <p>The Haworth Men’s Shed is more than just a workshop; it’s a place for connection. We provide a space where men can come together to work on projects, share skills, and most importantly, support one another.</p>
+            
+            <p>Men’s Sheds are vital community hubs that help combat social isolation by providing a meaningful way to spend time. Whether you’re an expert craftsman or have never held a hammer in your life, you are welcome here.</p>
+
+            <div class="vision-grid">
+                <div class="vision-item">
+                    <h4>Skill Sharing</h4>
+                    <p>Learn everything from woodworking to electronics repair from fellow members.</p>
+                </div>
+                <div class="vision-item">
+                    <h4>Wellbeing</h4>
+                    <p>A safe space to talk, listen, and belong to a supportive community.</p>
                 </div>
             </div>
-            <h3>Our Values</h3>
-            <ul>
-                <li><strong>Inclusivity:</strong> Everyone is welcome, regardless of skill level.</li>
-                <li><strong>Well-being:</strong> Fighting isolation through friendship.</li>
-                <li><strong>Sustainability:</strong> Repairing and upcycling items for the community.</li>
-            </ul>
-        </div>
 
-        <footer>&copy; 2024 Haworth Men's Shed</footer>
+            <h2 style="margin-top: 40px;">Who Can Join?</h2>
+            <p>Our doors are open to men from all walks of life in the Haworth area. If you enjoy making things, fixing things, or just having a chat over a cup of tea, the Shed is for you.</p>
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Haworth Men's Shed. Registered Charity No. 123456</p>
+    </footer>
+
 </body>
 </html>
