@@ -120,6 +120,7 @@
             padding: 12px 30px;
             cursor: pointer;
             border: none;
+            text-align: center;
         }
 
         .btn-orange {
@@ -298,15 +299,15 @@
 
             <div class="card">
                 <h3>Get in Touch</h3>
-                <form action="send_contact.php" method="POST">
+                <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
                     <label>Your Name</label>
-                    <input type="text" name="visitor_name" required placeholder="Full Name">
+                    <input type="text" name="name" required placeholder="Full Name">
                     
                     <label>Email Address</label>
-                    <input type="email" name="visitor_email" required placeholder="email@example.com">
+                    <input type="email" name="_replyto" required placeholder="email@example.com">
                     
                     <label>How can we help?</label>
-                    <textarea name="visitor_message" rows="5" required placeholder="Type your message here..."></textarea>
+                    <textarea name="message" rows="5" required placeholder="Type your message here..."></textarea>
                     
                     <button type="submit" class="btn btn-orange" style="width: 100%;">Send Message</button>
                 </form>
@@ -316,7 +317,6 @@
 
     <footer>
         <p>&copy; 2025 Haworth Men's Shed. Registered Charity No. 123456</p>
-        <p style="font-size: 0.8rem;">Created for the community.</p>
     </footer>
 
 </body>
