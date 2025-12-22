@@ -10,10 +10,10 @@
     <style>
         :root {
             /* Palette Update: Slightly richer orange and softer darks */
-            --primary: #f59e0b; /* Warmer Orange */
+            --primary: #f59e0b; 
             --primary-hover: #d97706;
-            --dark: #1f2937;    /* Soft Black/Slate */
-            --light: #f3f4f6;   /* Very light grey background */
+            --dark: #1f2937;    
+            --light: #f3f4f6;   
             --white: #ffffff;
             --text-main: #374151;
             --text-light: #6b7280;
@@ -125,7 +125,7 @@
         /* --- Hero Section --- */
         .hero {
             background-color: var(--dark);
-            /* Optional: Add a subtle background image here with an overlay */
+            /* Standard workshop image */
             background-image: linear-gradient(rgba(31, 41, 55, 0.9), rgba(31, 41, 55, 0.8)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070');
             background-size: cover;
             background-position: center;
@@ -143,7 +143,7 @@
 
         .hero p {
             font-size: 1.25rem;
-            color: #d1d5db; /* Light gray text */
+            color: #d1d5db;
             max-width: 600px;
             margin: 0 auto 30px auto;
         }
@@ -164,7 +164,7 @@
             gap: 40px;
         }
 
-        /* --- Cards (Clean White Boxes) --- */
+        /* --- Cards --- */
         .card {
             background: var(--white);
             padding: 30px;
@@ -182,7 +182,6 @@
             display: inline-block;
         }
         
-        /* Small orange underline accent */
         h3::after {
             content: '';
             display: block;
@@ -210,7 +209,7 @@
         }
         
         .feature-item::before {
-            content: '✓'; /* Simple checkmark icon */
+            content: '✓';
             color: var(--primary);
             margin-right: 10px;
             font-weight: bold;
@@ -306,8 +305,7 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="activities.html">Activities</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="donate.html" class="btn btn-orange">Donate</a></li>
-                </ul>
+                    </ul>
             </nav>
         </div>
     </header>
@@ -324,11 +322,7 @@
             <div class="card">
                 <h3>About Us</h3>
                 <p>Haworth Men's Shed is a place where men can meet to share skills, work on projects, or simply have a cup of tea and a chat. We provide the tools and the space; you provide the creativity.</p>
-                <br>
-                <h3>Support Our Mission</h3>
-                <p>We are a registered charity and rely on your kind donations to keep our doors open and our tools sharp.</p>
-                <a href="donate.html" class="btn btn-orange">Make a Donation</a>
-            </div>
+                </div>
 
             <div class="card">
                 <h3>What We Do</h3>
