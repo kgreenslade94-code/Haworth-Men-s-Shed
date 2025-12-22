@@ -3,53 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haworth Men's Shed | Community & Creativity</title>
+    <title>Haworth Men's Shed</title>
     <style>
-        /* Modern CSS Reset & Variables */
         :root {
-            --shed-orange: #e67e22;
-            --shed-orange-hover: #d35400;
-            --shed-dark: #2c3e50;
-            --text-main: #444;
-            --text-light: #7f8c8d;
-            --bg-body: #f0f2f5;
+            --shed-orange: #f39c12;
+            --shed-dark: #2c2c2c;
+            --bg-gray: #e0e0e0;
             --white: #ffffff;
-            --border-color: #eaeaea;
         }
 
         * { box-sizing: border-box; }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-body);
-            color: var(--text-main);
+            background-color: var(--bg-gray);
+            color: #333;
             line-height: 1.6;
         }
 
-        /* Container */
+        /* Main Wrapper */
         .page-wrapper {
-            max-width: 1140px;
+            max-width: 1100px;
             margin: 40px auto;
             background: var(--white);
-            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
-        /* Navigation */
+        /* Header & Nav */
         header {
             background: var(--shed-dark);
             color: white;
             display: flex;
             align-items: center;
-            padding: 20px 50px;
+            padding: 15px 40px;
             justify-content: space-between;
         }
 
         .logo-box img {
-            height: 60px;
+            height: 70px;
             display: block;
         }
 
@@ -62,11 +57,12 @@
         }
 
         nav ul li a {
-            color: #ecf0f1;
+            color: white;
             text-decoration: none;
             padding: 10px 15px;
-            font-weight: 500;
-            font-size: 0.95rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
             transition: color 0.3s;
         }
 
@@ -74,174 +70,125 @@
             color: var(--shed-orange);
         }
 
-        .btn-donate {
-            background: var(--shed-orange);
-            color: white !important;
-            border-radius: 6px;
-            margin-left: 15px;
-            padding: 10px 22px !important;
+        /* Button Styling */
+        .btn {
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: opacity 0.3s, transform 0.2s;
+            display: inline-block;
+            text-align: center;
         }
 
-        .btn-donate:hover {
-            background: var(--shed-orange-hover);
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-orange {
+            background: var(--shed-orange);
+            color: white !important;
+        }
+
+        .btn-nav {
+            padding: 10px 20px;
+            margin-left: 10px;
         }
 
         /* Hero Section */
         .hero {
-            padding: 80px 50px;
-            text-align: center;
-            background: linear-gradient(to bottom, #ffffff, #fafafa);
-            border-bottom: 1px solid var(--border-color);
+            padding: 60px 40px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
             color: var(--shed-dark);
-            margin: 0 0 15px 0;
-            font-weight: 800;
         }
 
         .hero p {
-            color: var(--text-light);
+            color: #666;
             font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
+            margin-bottom: 25px;
         }
 
-        .btn-join {
-            background: var(--shed-dark);
-            color: white;
-            padding: 14px 32px;
-            text-decoration: none;
-            border-radius: 6px;
-            display: inline-block;
-            font-weight: 600;
-            transition: transform 0.2s, background 0.3s;
+        .btn-large {
+            padding: 15px 30px;
+            font-size: 1rem;
         }
 
-        .btn-join:hover {
-            background: #1a252f;
-            transform: translateY(-2px);
-        }
-
-        /* Content Layout */
+        /* Content Grid */
         .content-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 320px;
-            gap: 50px;
-            padding: 60px 50px;
+            grid-template-columns: 1fr 1fr 300px;
+            gap: 40px;
+            padding: 40px;
         }
 
         h3 {
-            color: var(--shed-dark);
-            font-size: 1.4rem;
-            margin-top: 0;
+            border-bottom: 2px solid var(--shed-orange);
+            padding-bottom: 8px;
             margin-bottom: 20px;
-            position: relative;
-        }
-
-        h3::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 3px;
-            background: var(--shed-orange);
-            margin-top: 8px;
-        }
-
-        .section-box p {
-            margin-bottom: 25px;
-            color: var(--text-main);
+            color: var(--shed-dark);
+            text-transform: uppercase;
+            font-size: 1.1rem;
         }
 
         .section-box ul {
-            padding-left: 18px;
-            margin-bottom: 30px;
+            padding-left: 20px;
         }
 
         .section-box li {
-            margin-bottom: 12px;
-            color: var(--text-main);
+            margin-bottom: 10px;
         }
 
         /* Sidebar & Forms */
         .sidebar-item {
-            background: #fdfdfd;
-            padding: 20px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            background: #fcfcfc;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 4px;
         }
 
         .map-placeholder {
-            background: #f0f0f0;
+            background: #eee;
             height: 150px;
             width: 100%;
-            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #aaa;
+            color: #999;
             margin: 15px 0;
-            font-size: 0.9rem;
-            border: 1px dashed #ccc;
-        }
-
-        label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: var(--shed-dark);
+            border-radius: 4px;
         }
 
         input, textarea {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
             font-family: inherit;
-            transition: border-color 0.3s;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--shed-orange);
         }
 
         /* Footer */
         footer {
-            background: #fafafa;
-            padding: 30px 50px;
-            border-top: 1px solid var(--border-color);
+            background: #fff;
+            padding: 25px 40px;
+            border-top: 1px solid #eee;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.9rem;
-            color: var(--text-light);
+            font-size: 0.85rem;
+            color: #888;
         }
 
-        .social-links a {
-            color: var(--shed-dark);
-            text-decoration: none;
-            margin-left: 15px;
-            font-weight: 600;
-        }
-
-        /* Responsive */
-        @media (max-width: 1000px) {
-            .content-grid { grid-template-columns: 1fr 1fr; }
-            aside { grid-column: span 2; }
-        }
-
-        @media (max-width: 768px) {
-            .content-grid { grid-template-columns: 1fr; padding: 40px 25px; }
-            aside { grid-column: span 1; }
-            header { flex-direction: column; padding: 20px; }
-            nav ul { margin-top: 20px; flex-wrap: wrap; justify-content: center; }
-            .hero h1 { font-size: 2rem; }
-            footer { flex-direction: column; text-align: center; gap: 15px; }
+        @media (max-width: 900px) {
+            .content-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -254,73 +201,69 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Activities</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#" class="btn-donate">Donate</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="donate.html" class="btn btn-orange btn-nav">Donate</a></li>
                 </ul>
             </nav>
         </header>
 
         <section class="hero">
-            <h1>Create, Build, Belong.</h1>
-            <p>Haworth Men's Shed provides a space for men to connect, share skills, and work on meaningful community projects.</p>
-            <a href="#" class="btn-join">Become a Member</a>
+            <h1>Welcome to Haworth Men's Shed</h1>
+            <p>A place to create, build, connect, and belong.</p>
+            <a href="join.html" class="btn btn-orange btn-large">Join Us Today</a>
         </section>
 
         <div class="content-grid">
             <div class="section-box">
-                <h3>Our Mission</h3>
-                <p>Haworth Men's Shed is a community-run space where men can meet to share skills, work on projects, or simply enjoy a cup of tea and a chat.</p>
-                <p>Our primary aim is to promote social wellbeing and reduce isolation through the power of practical creativity and companionship.</p>
+                <h3>About Us</h3>
+                <p>Haworth Men's Shed is a place where men can meet to share skills, work on projects, or simply have a cup of tea and a chat.</p>
                 
-                <h3>Support the Shed</h3>
-                <p>As a registered charity, we rely on the generosity of our community to keep our workshop running and our tools sharp.</p>
-                <a href="#" class="btn-join" style="background: var(--shed-orange);">Make a Donation</a>
+                <h3>Support Us</h3>
+                <p>We are a registered charity and rely on your kind donations to keep our doors open.</p>
+                <a href="donate.html" class="btn btn-orange" style="padding: 10px 20px;">Donate Now</a>
             </div>
 
             <div class="section-box">
-                <h3>What We Do</h3>
+                <h3>Activities</h3>
                 <ul>
-                    <li><strong>Woodworking:</strong> From birdhouses to furniture repair.</li>
-                    <li><strong>Gardening:</strong> Managing our community allotment.</li>
-                    <li><strong>Metalwork:</strong> Basic repairs and creative projects.</li>
-                    <li><strong>Tech & Repair:</strong> Electronics and small appliance fixes.</li>
-                    <li><strong>Socializing:</strong> Regular trips, talks, and daily coffee.</li>
+                    <li>Woodworking & Furniture Repair</li>
+                    <li>Community Gardening & Allotment</li>
+                    <li>Metalwork & Electronics</li>
+                    <li>Skill-sharing Workshops</li>
+                    <li>Social Trips & Talks</li>
                 </ul>
-                
-                <h3>Who Can Join?</h3>
-                <p>We are open to all men in the Worth Valley area. No previous experience is needed—just a willingness to get involved!</p>
+                <p><a href="activities.html" style="color: var(--shed-orange);">View all activities &rarr;</a></p>
             </div>
 
             <aside>
                 <div class="sidebar-item">
-                    <h3>Visit Us</h3>
-                    <p><strong>Location:</strong><br>123 Main Street, Haworth, BD22</p>
-                    <div class="map-placeholder">Interactive Map Coming Soon</div>
-                    <p><strong>Opening Hours:</strong><br>Tue & Thu: 10:00am — 4:00pm</p>
+                    <h3>Location & Hours</h3>
+                    <p>Find us at: [Your Address Here]</p>
+                    <div class="map-placeholder">Map View</div>
+                    <p><strong>Tue & Thu:</strong> 10am - 4pm</p>
                 </div>
 
                 <div class="sidebar-item">
-                    <h3>Get in Touch</h3>
-                    <form>
-                        <label>Your Name</label>
-                        <input type="text" placeholder="John Doe">
-                        <label>Email Address</label>
-                        <input type="email" placeholder="john@example.com">
-                        <label>How can we help?</label>
-                        <textarea rows="4" placeholder="Your message..."></textarea>
-                        <button type="submit" class="btn-join" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+                    <h3>Message Us</h3>
+                    <form action="send_contact.php" method="POST">
+                        <label>Name</label>
+                        <input type="text" name="name" required>
+                        <label>Email</label>
+                        <input type="email" name="email" required>
+                        <label>Message</label>
+                        <textarea name="message" rows="3" required></textarea>
+                        <button type="submit" class="btn btn-orange" style="width: 100%; border: none; cursor: pointer; padding: 12px;">Send Message</button>
                     </form>
                 </div>
             </aside>
         </div>
 
         <footer>
-            <div>&copy; 2025 Haworth Men's Shed. Registered Charity No. 12345678</div>
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
+            <div>&copy; 2024 Haworth Men's Shed. Registered Charity No. [Number]</div>
+            <div>
+                Follow us: <a href="https://facebook.com" style="color:#888">Facebook</a> | <a href="https://twitter.com" style="color:#888">Twitter</a>
             </div>
         </footer>
     </div>
